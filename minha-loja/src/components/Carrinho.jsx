@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaBackspace } from 'react-icons/fa';
 
 function Carrinho({ carrinho, removerDoCarrinho, aumentarQuantidade, diminuirQuantidade, limparCarrinho, calcularTotal, calcularTotalItens }) {
   return (
@@ -33,19 +34,25 @@ function Carrinho({ carrinho, removerDoCarrinho, aumentarQuantidade, diminuirQua
                     width: '35px',
                     height: '35px',
                     cursor: 'pointer',
-                    backgroundColor: '#27ae60',
-                    color: 'white',
-                    border: 'none',
+                    backgroundColor: 'white',
+                    color: '#27ae60',
+                    border: '2px solid #27ae60',
                     borderRadius: '50%',
                     fontSize: '20px',
                     fontWeight: 'bold',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    transition: 'background-color 0.3s'
+                    transition: 'all 0.3s'
                   }}
-                  onMouseOver={(e) => e.target.style.backgroundColor = '#229954'}
-                  onMouseOut={(e) => e.target.style.backgroundColor = '#27ae60'}
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = '#27ae60';
+                    e.target.style.color = 'white';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = 'white';
+                    e.target.style.color = '#27ae60';
+                  }}
                 >
                   +
                 </button>
@@ -63,19 +70,25 @@ function Carrinho({ carrinho, removerDoCarrinho, aumentarQuantidade, diminuirQua
                     width: '35px',
                     height: '35px',
                     cursor: 'pointer',
-                    backgroundColor: '#e74c3c',
-                    color: 'white',
-                    border: 'none',
+                    backgroundColor: 'white',
+                    color: '#e74c3c',
+                    border: '2px solid #e74c3c',
                     borderRadius: '50%',
                     fontSize: '20px',
                     fontWeight: 'bold',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    transition: 'background-color 0.3s'
+                    transition: 'all 0.3s'
                   }}
-                  onMouseOver={(e) => e.target.style.backgroundColor = '#c0392b'}
-                  onMouseOut={(e) => e.target.style.backgroundColor = '#e74c3c'}
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = '#e74c3c';
+                    e.target.style.color = 'white';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = 'white';
+                    e.target.style.color = '#e74c3c';
+                  }}
                 >
                   -
                 </button>
@@ -83,10 +96,25 @@ function Carrinho({ carrinho, removerDoCarrinho, aumentarQuantidade, diminuirQua
                   className="btn-excluir"
                   onClick={() => removerDoCarrinho(item.id)}
                   style={{
-                    marginLeft: '8px'
+                    marginLeft: '8px',
+                    backgroundColor: '#e74c3c',
+                    color: 'white',
+                    border: 'none',
+                    padding: '8px 16px',
+                    borderRadius: '5px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontSize: '14px',
+                    fontWeight: 'bold',
+                    transition: 'background-color 0.3s'
                   }}
+                  onMouseOver={(e) => e.target.style.backgroundColor = '#c0392b'}
+                  onMouseOut={(e) => e.target.style.backgroundColor = '#e74c3c'}
                 >
-                  Excluir
+                  <FaBackspace />
+                  <span>Excluir</span>
                 </button>
               </div>
             </div>

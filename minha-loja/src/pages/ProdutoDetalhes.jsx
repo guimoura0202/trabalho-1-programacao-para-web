@@ -40,15 +40,15 @@ function ProdutoDetalhes({ adicionarAoCarrinho }) {
       <button 
         onClick={() => navigate('/')}
         style={{
-          padding: '6px 12px',
-          fontSize: '14px',
+          padding: '4px 10px',
+          fontSize: '13px',
           cursor: 'pointer',
           backgroundColor: '#95a5a6',
           color: 'white',
           border: 'none',
-          borderRadius: '4px',
+          borderRadius: '3px',
           fontWeight: 'normal',
-          marginBottom: '15px'
+          marginBottom: '10px'
         }}
         onMouseOver={(e) => e.target.style.backgroundColor = '#7f8c8d'}
         onMouseOut={(e) => e.target.style.backgroundColor = '#95a5a6'}

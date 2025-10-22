@@ -7,17 +7,17 @@ function CarrinhoPage({ carrinho, removerDoCarrinho, aumentarQuantidade, diminui
 
   return (
     <div>
-      <div style={{ padding: '15px 20px', maxWidth: '1200px', margin: '0 auto' }}>
+      <div style={{ padding: '10px 20px' }}>
         <button 
           onClick={() => navigate('/')}
           style={{
-            padding: '6px 12px',
-            fontSize: '14px',
+            padding: '4px 10px',
+            fontSize: '13px',
             cursor: 'pointer',
             backgroundColor: '#95a5a6',
             color: 'white',
             border: 'none',
-            borderRadius: '4px',
+            borderRadius: '3px',
             fontWeight: 'normal'
           }}
           onMouseOver={(e) => e.target.style.backgroundColor = '#7f8c8d'}
