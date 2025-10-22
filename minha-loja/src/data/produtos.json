@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "nome": "Mochila do Rock",
+    "rating": 5,
+    "avaliacoes": 100,
+    "preco": 100,
+    "imagem": "https://cdn.awsli.com.br/922/922966/produto/92989514/f6bc15b14e.jpg",
+    "descricao": "Mochila escolar resistente com design rock'n'roll. Possui compartimento principal espaçoso, bolso frontal com zíper e alças acolchoadas para maior conforto. Material impermeável e durável, ideal para o dia a dia."
+  },
+  {
+    "id": 2,
+    "nome": "Kit das princesas da Disney 1",
+    "rating": 4,
+    "avaliacoes": 28,
+    "preco": 500,
+    "imagem": "https://images.tcdn.com.br/img/img_prod/810961/kit_princesa_disney_glitter_mochila_c_rodinhas_13160_lancheira_13164_estojo_13165_22174_1_832dc7d2b1012c1188e62cd32c4107c0.jpg",
+    "descricao": "Kit completo das Princesas Disney com glitter! Inclui mochila com rodinhas, lancheira térmica e estojo. Perfeito para meninas que amam as princesas. Design encantador com muito brilho e qualidade premium."
+  },
+  {
+    "id": 3,
+    "nome": "Caderno do Harry Potter muito bonito",
+    "rating": 4.5,
+    "avaliacoes": 123,
+    "preco": 80,
+    "imagem": "https://images.tcdn.com.br/img/img_prod/1226139/caderno_univ_1_materia_96_fls_harry_potter_capa_9_jandaia_63599_14217_1_ce19086e3006a458e5dc99e5ba5776fb.png",
+    "descricao": "Caderno universitário de 96 folhas com tema Harry Potter. Capa dura resistente, folhas pautadas de alta qualidade. Ideal para estudos e anotações. Design exclusivo para fãs da saga."
+  },
+  {
+    "id": 4,
+    "nome": "Apontador Faber Castell",
+    "rating": 3.5,
+    "avaliacoes": 15,
+    "preco": 10,
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8oTSkWBtysLciN_GW19cHLEseuI4z81KHVA&s",
+    "descricao": "Apontador de qualidade Faber Castell com lâmina de aço temperado. Compacto e prático, possui depósito para aparas. Perfeito para lápis de grafite e lápis de cor."
+  },
+  {
+    "id": 5,
+    "nome": "Mochila do Rock 2",
+    "rating": 4,
+    "avaliacoes": 68,
+    "preco": 120,
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8cFrLyehZn3TY8zilsMXhdOlxe7dxrHFUhg&s",
+    "descricao": "Nova versão da mochila rock com design moderno e urbano. Múltiplos compartimentos incluindo bolso para notebook. Resistente à água, costuras reforçadas e zíperes de alta qualidade."
+  },
+  {
+    "id": 6,
+    "nome": "Lápis de cor Faber Castell caríssimo",
+    "rating": 1,
+    "avaliacoes": 2,
+    "preco": 80,
+    "imagem": "https://papelariacriativa.com.br/wp-content/uploads/lapis-de-cor-faber-castell-12-cores-ecolapis-6-lapis-neon-1201126n-1.jpg",
+    "descricao": "Conjunto de lápis de cor Faber Castell com 12 cores vibrantes + 6 cores neon. Ecolápis feitos com madeira reflorestada. Minas resistentes e cores intensas para trabalhos artísticos profissionais."
+  },
+  {
+    "id": 7,
+    "nome": "Caneta com 4 cores muito top",
+    "rating": 0,
+    "avaliacoes": 0,
+    "preco": 10,
+    "imagem": "https://m.media-amazon.com/images/I/318-WPfmVKL.jpg",
+    "descricao": "Caneta esferográfica multifuncional com 4 cores (azul, preto, vermelho e verde). Sistema de clique prático, escrita suave e uniforme. Ideal para estudantes e profissionais organizados."
+  },
+  {
+    "id": 8,
+    "nome": "Mochila do Rock 3",
+    "rating": 5,
+    "avaliacoes": 17,
+    "preco": 120,
+    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYGLb3r0HhxFDqgoCggMCFJhdyC7wb6ESzUg&s",
+    "descricao": "Edição limitada da mochila rock com estampa exclusiva. Design ergonômico, compartimento para laptop até 15 polegadas, porta USB para carregador. Material premium com garantia de durabilidade."
+  }
+]
+
