@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { FaCartArrowDown } from 'react-icons/fa';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home.jsx';
 import CarrinhoPage from './pages/CarrinhoPage.jsx';
 import ProdutoDetalhes from './pages/ProdutoDetalhes.jsx';
 
-function App() {
+function AppContent() {
+  const navigate = useNavigate();
   const [carrinho, setCarrinho] = useState([]);
 
   const adicionarAoCarrinho = (produto) => {
@@ -60,83 +62,69 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="app">
-        <header>
-          <h1>Minha Papelaria</h1>
-          <nav style={{ 
-            display: 'flex', 
-            gap: '20px', 
-            justifyContent: 'center', 
-            marginTop: '15px',
-            paddingBottom: '15px'
-          }}>
-            <Link to="/" style={{ 
-              textDecoration: 'none', 
-              color: '#333', 
-              fontSize: '18px',
-              padding: '8px 16px',
-              backgroundColor: '#f0f0f0',
-              borderRadius: '5px',
-              transition: 'background-color 0.3s'
-            }}>
-              Home
-            </Link>
-            <Link to="/carrinho" style={{ 
-              textDecoration: 'none', 
-              color: '#333', 
-              fontSize: '18px',
-              padding: '8px 16px',
-              backgroundColor: '#f0f0f0',
-              borderRadius: '5px',
-              transition: 'background-color 0.3s',
-              position: 'relative'
-            }}>
-              Carrinho {carrinho.length > 0 && (
-                <span style={{
-                  backgroundColor: '#e74c3c',
-                  color: 'white',
-                  borderRadius: '50%',
-                  padding: '2px 6px',
-                  fontSize: '12px',
-                  marginLeft: '5px'
-                }}>
-                  {calcularTotalItens()}
-                </span>
-              )}
-            </Link>
-          </nav>
-        </header>
-        <main>
-          <Routes>
-            <Route 
-              path="/" 
-              element={<Home adicionarAoCarrinho={adicionarAoCarrinho} />} 
-            />
-            <Route 
-              path="/carrinho" 
-              element={
-                <CarrinhoPage 
-                  carrinho={carrinho}
-                  removerDoCarrinho={removerDoCarrinho}
-                  aumentarQuantidade={aumentarQuantidade}
-                  diminuirQuantidade={diminuirQuantidade}
-                  limparCarrinho={limparCarrinho}
-                  calcularTotal={calcularTotal}
-                  calcularTotalItens={calcularTotalItens}
-                />
-              } 
-            />
-            <Route 
-              path="/produto/:id" 
-              element={<ProdutoDetalhes adicionarAoCarrinho={adicionarAoCarrinho} />} 
-            />
-          </Routes>
-        </main>
-        <footer>
-          <p>Direitos Autorais, 2025.</p>
-        </footer>
+    <div className="app">
+      <header>
+        <h1>Minha Papelaria</h1>
+      </header>
+      <div style={{
+        backgroundColor: '#e0e0e0',
+        padding: '15px 20px',
+        borderBottom: '2px solid #ccc'
+      }}>
+        <div style={{ 
+          maxWidth: '1200px',
+          margin: '0 auto',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
+          fontSize: '24px',
+          fontWeight: 'bold',
+          color: '#2874A6',
+          cursor: 'pointer'
+        }}
+        onClick={() => navigate('/carrinho')}
+        >
+          <FaCartArrowDown />
+          <span>Carrinho ({calcularTotalItens()})</span>
+        </div>
       </div>
+      <main>
+        <Routes>
+          <Route 
+            path="/" 
+            element={<Home adicionarAoCarrinho={adicionarAoCarrinho} />} 
+          />
+          <Route 
+            path="/carrinho" 
+            element={
+              <CarrinhoPage 
+                carrinho={carrinho}
+                removerDoCarrinho={removerDoCarrinho}
+                aumentarQuantidade={aumentarQuantidade}
+                diminuirQuantidade={diminuirQuantidade}
+                limparCarrinho={limparCarrinho}
+                calcularTotal={calcularTotal}
+                calcularTotalItens={calcularTotalItens}
+              />
+            } 
+          />
+          <Route 
+            path="/produto/:id" 
+            element={<ProdutoDetalhes adicionarAoCarrinho={adicionarAoCarrinho} />} 
+          />
+        </Routes>
+      </main>
+      <footer>
+        <p>Direitos Autorais, 2025.</p>
+      </footer>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
