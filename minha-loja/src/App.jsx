@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import Home from './pages/Home.jsx';
 import CarrinhoPage from './pages/CarrinhoPage.jsx';
 import ProdutoDetalhes from './pages/ProdutoDetalhes.jsx';
-
 function AppContent() {
   const navigate = useNavigate();
   const [carrinho, setCarrinho] = useState([]);
