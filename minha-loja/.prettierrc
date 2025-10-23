@@ -14,8 +14,6 @@
   "tabWidth": 2,
   "trailingComma": "es5",
   "useTabs": false,
-  "jsxBracketSameLine": false,
-  "jsxBracketSameIndent": true,
   "overrides": [
     {
       "files": ["*.css", "*.scss"],
