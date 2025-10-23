@@ -7,16 +7,13 @@ import { FaArrowAltCircleLeft } from 'react-icons/fa';
 function ProdutoDetalhes({ adicionarAoCarrinho }) {
   const { id } = useParams();
   const navigate = useNavigate();
-  const produto = produtos.find(p => p.id === parseInt(id));
+  const produto = produtos.find((p) => p.id === parseInt(id));
 
   if (!produto) {
     return (
       <div className="text-center py-5">
         <h2>Produto não encontrado</h2>
-        <button
-          onClick={() => navigate('/')}
-          className="btn btn-primary mt-3 px-4"
-        >
+        <button onClick={() => navigate('/')} className="btn btn-primary mt-3 px-4">
           Voltar para Home
         </button>
       </div>
@@ -48,9 +45,7 @@ function ProdutoDetalhes({ adicionarAoCarrinho }) {
         </div>
 
         <div className="col-md-6">
-          <h2 className="fw-bold mb-2">
-            {produto.nome}
-          </h2>
+          <h2 className="fw-bold mb-2">{produto.nome}</h2>
 
           <div className="d-flex align-items-center gap-2 mb-3">
             <Rating
@@ -60,21 +55,17 @@ function ProdutoDetalhes({ adicionarAoCarrinho }) {
               fullSymbol={<span className="text-warning fs-4">★</span>}
               fractions={2}
             />
-            <span className="fw-semibold text-secondary">
-              ({produto.avaliacoes} avaliações)
-            </span>
+            <span className="fw-semibold text-secondary">({produto.avaliacoes} avaliações)</span>
           </div>
 
           <div className="border rounded p-3 bg-light mb-4">
             <p className="fw-semibold mb-2">Descrição:</p>
-            <p className="text-muted mb-0" style={{ textAlign: "justify" }}>
+            <p className="text-muted mb-0" style={{ textAlign: 'justify' }}>
               {produto.descricao}
             </p>
           </div>
 
-          <h3 className="text-success text-center fw-bold mb-4">
-            R$ {produto.preco.toFixed(2)}
-          </h3>
+          <h3 className="text-success text-center fw-bold mb-4">R$ {produto.preco.toFixed(2)}</h3>
 
           <button
             onClick={() => {
@@ -92,4 +83,3 @@ function ProdutoDetalhes({ adicionarAoCarrinho }) {
 }
 
 export default ProdutoDetalhes;
-

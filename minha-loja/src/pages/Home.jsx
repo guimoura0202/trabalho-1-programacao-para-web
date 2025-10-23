@@ -10,4 +10,3 @@ function Home({ adicionarAoCarrinho }) {
 }
 
 export default Home;
-

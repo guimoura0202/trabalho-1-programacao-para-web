@@ -47,9 +47,7 @@ function ListaProdutos({ adicionarAoCarrinho }) {
                   <span className="ms-1 text-muted small">{produto.avaliacoes}</span>
                 </div>
 
-                <p className="fw-semibold text-dark mb-3">
-                  R$ {produto.preco.toFixed(2)}
-                </p>
+                <p className="fw-semibold text-dark mb-3">R$ {produto.preco.toFixed(2)}</p>
 
                 <button
                   className="btn btn-outline-success btn-sm w-100 fw-semibold"

@@ -3,7 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import Carrinho from '../components/Carrinho';
 import { FaArrowCircleLeft, FaArrowLeft } from 'react-icons/fa';
 
-function CarrinhoPage({ carrinho, removerDoCarrinho, aumentarQuantidade, diminuirQuantidade, limparCarrinho, calcularTotal, calcularTotalItens }) {
+function CarrinhoPage({
+  carrinho,
+  removerDoCarrinho,
+  aumentarQuantidade,
+  diminuirQuantidade,
+  limparCarrinho,
+  calcularTotal,
+  calcularTotalItens,
+}) {
   const navigate = useNavigate();
 
   return (
@@ -30,4 +38,3 @@ function CarrinhoPage({ carrinho, removerDoCarrinho, aumentarQuantidade, diminui
 }
 
 export default CarrinhoPage;
-
