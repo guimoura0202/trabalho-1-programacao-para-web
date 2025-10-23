@@ -15,8 +15,9 @@ function ListaProdutos({ adicionarAoCarrinho }) {
           <div key={produto.id} className="col-6 col-md-4 col-lg-2">
             <div className="card h-100 shadow-sm">
               <div
-                className="bg-dark text-white d-flex align-items-center justify-content-center cursor-pointer"
+                className="bg-dark text-white d-flex align-items-center justify-content-center"
                 onClick={() => navigate(`/produto/${produto.id}`)}
+                style={{ cursor: 'pointer' }}
               >
                 {produto.imagem ? (
                   <img
@@ -30,8 +31,9 @@ function ListaProdutos({ adicionarAoCarrinho }) {
               </div>
               <div className="card-body text-center">
                 <h6
-                  className="fw-semibold text-dark mb-2 cursor-pointer"
+                  className="fw-semibold text-dark mb-2"
                   onClick={() => navigate(`/produto/${produto.id}`)}
+                  style={{ cursor: 'pointer' }}
                 >
                   {produto.nome}
                 </h6>
