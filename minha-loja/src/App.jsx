@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import Home from './pages/Home.jsx';
 import CarrinhoPage from './pages/CarrinhoPage.jsx';
 import ProdutoDetalhes from './pages/ProdutoDetalhes.jsx';
+import NotFound from './pages/NotFound.jsx';
 function AppContent() {
   const navigate = useNavigate();
   const [carrinho, setCarrinho] = useState([]);
@@ -102,6 +103,7 @@ function AppContent() {
             path="/produto/:id"
             element={<ProdutoDetalhes adicionarAoCarrinho={adicionarAoCarrinho} />}
           />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <footer className="bg-primary text-center py-2 border-top">
