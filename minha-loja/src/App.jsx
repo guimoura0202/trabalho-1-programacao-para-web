@@ -1,15 +1,9 @@
-import React, { useState } from "react";
-import { FaCartArrowDown } from "react-icons/fa";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useNavigate,
-} from "react-router-dom";
-import Home from "./pages/Home.jsx";
-import CarrinhoPage from "./pages/CarrinhoPage.jsx";
-import ProdutoDetalhes from "./pages/ProdutoDetalhes.jsx";
-
+import React, { useState } from 'react';
+import { FaCartArrowDown } from 'react-icons/fa';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import CarrinhoPage from './pages/CarrinhoPage.jsx';
+import ProdutoDetalhes from './pages/ProdutoDetalhes.jsx';
 function AppContent() {
   const navigate = useNavigate();
   const [carrinho, setCarrinho] = useState([]);
@@ -20,9 +14,7 @@ function AppContent() {
     if (produtoExistente) {
       setCarrinho(
         carrinho.map((item) =>
-          item.id === produto.id
-            ? { ...item, quantidade: item.quantidade + 1 }
-            : item
+          item.id === produto.id ? { ...item, quantidade: item.quantidade + 1 } : item
         )
       );
     } else {
@@ -37,9 +29,7 @@ function AppContent() {
   const aumentarQuantidade = (produtoId) => {
     setCarrinho(
       carrinho.map((item) =>
-        item.id === produtoId
-          ? { ...item, quantidade: item.quantidade + 1 }
-          : item
+        item.id === produtoId ? { ...item, quantidade: item.quantidade + 1 } : item
       )
     );
   };
@@ -51,9 +41,7 @@ function AppContent() {
     } else {
       setCarrinho(
         carrinho.map((item) =>
-          item.id === produtoId
-            ? { ...item, quantidade: item.quantidade - 1 }
-            : item
+          item.id === produtoId ? { ...item, quantidade: item.quantidade - 1 } : item
         )
       );
     }
@@ -64,10 +52,7 @@ function AppContent() {
   };
 
   const calcularTotal = () => {
-    return carrinho.reduce(
-      (total, item) => total + item.preco * item.quantidade,
-      0
-    );
+    return carrinho.reduce((total, item) => total + item.preco * item.quantidade, 0);
   };
 
   const calcularTotalItens = () => {
@@ -79,7 +64,7 @@ function AppContent() {
       <nav className="navbar navbar-dark bg-primary justify-content-center">
         <button
           className="btn btn-link text-white d-flex align-items-center gap-2 fs-1 fw-semibold text-decoration-none"
-          onClick={() => navigate("/")}
+          onClick={() => navigate('/')}
         >
           Minha Papelaria
         </button>
@@ -89,7 +74,7 @@ function AppContent() {
         <div className="container d-flex align-items-center justify-content-start">
           <button
             className="btn btn-link text-primary d-flex align-items-center gap-2 fs-1 fw-semibold text-decoration-none"
-            onClick={() => navigate("/carrinho")}
+            onClick={() => navigate('/carrinho')}
           >
             <FaCartArrowDown />
             <span>Carrinho ({calcularTotalItens()})</span>
@@ -98,10 +83,7 @@ function AppContent() {
       </div>
       <main>
         <Routes>
-          <Route
-            path="/"
-            element={<Home adicionarAoCarrinho={adicionarAoCarrinho} />}
-          />
+          <Route path="/" element={<Home adicionarAoCarrinho={adicionarAoCarrinho} />} />
           <Route
             path="/carrinho"
             element={
@@ -118,9 +100,7 @@ function AppContent() {
           />
           <Route
             path="/produto/:id"
-            element={
-              <ProdutoDetalhes adicionarAoCarrinho={adicionarAoCarrinho} />
-            }
+            element={<ProdutoDetalhes adicionarAoCarrinho={adicionarAoCarrinho} />}
           />
         </Routes>
       </main>
