@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Carrinho from '../components/Carrinho';
-import { FaArrowCircleLeft, FaArrowLeft } from 'react-icons/fa';
+import { FaArrowCircleLeft } from 'react-icons/fa';
 
 function CarrinhoPage({
   carrinho,
