@@ -1,32 +1,22 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Carrinho from '../components/Carrinho';
+import { FaArrowCircleLeft, FaArrowLeft } from 'react-icons/fa';
 
 function CarrinhoPage({ carrinho, removerDoCarrinho, aumentarQuantidade, diminuirQuantidade, limparCarrinho, calcularTotal, calcularTotalItens }) {
   const navigate = useNavigate();
 
   return (
     <div>
-      <div style={{ padding: '10px 20px' }}>
-        <button 
+      <div className="container py-3">
+        <button
           onClick={() => navigate('/')}
-          style={{
-            padding: '4px 10px',
-            fontSize: '13px',
-            cursor: 'pointer',
-            backgroundColor: '#95a5a6',
-            color: 'white',
-            border: 'none',
-            borderRadius: '3px',
-            fontWeight: 'normal'
-          }}
-          onMouseOver={(e) => e.target.style.backgroundColor = '#7f8c8d'}
-          onMouseOut={(e) => e.target.style.backgroundColor = '#95a5a6'}
+          className="btn btn-link text-primary d-flex align-items-center gap-2 mb-3 text-decoration-none"
         >
-          Voltar
+          <FaArrowCircleLeft /> Voltar
         </button>
       </div>
-      <Carrinho 
+      <Carrinho
         carrinho={carrinho}
         removerDoCarrinho={removerDoCarrinho}
         aumentarQuantidade={aumentarQuantidade}

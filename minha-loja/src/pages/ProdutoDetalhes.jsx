@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Rating from 'react-rating';
 import produtos from '../data/produtos.json';
+import { FaArrowAltCircleLeft } from 'react-icons/fa';
 
 function ProdutoDetalhes({ adicionarAoCarrinho }) {
   const { id } = useParams();
@@ -10,20 +11,11 @@ function ProdutoDetalhes({ adicionarAoCarrinho }) {
 
   if (!produto) {
     return (
-      <div style={{ textAlign: 'center', padding: '40px' }}>
+      <div className="text-center py-5">
         <h2>Produto não encontrado</h2>
-        <button 
+        <button
           onClick={() => navigate('/')}
-          style={{
-            padding: '10px 20px',
-            fontSize: '16px',
-            cursor: 'pointer',
-            backgroundColor: '#3498db',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            marginTop: '20px'
-          }}
+          className="btn btn-primary mt-3 px-4"
         >
           Voltar para Home
         </button>
@@ -32,135 +24,66 @@ function ProdutoDetalhes({ adicionarAoCarrinho }) {
   }
 
   return (
-    <div style={{ 
-      maxWidth: '1000px', 
-      margin: '0 auto', 
-      padding: '20px'
-    }}>
-      <button 
+    <div className="container py-4">
+      <button
         onClick={() => navigate('/')}
-        style={{
-          padding: '4px 10px',
-          fontSize: '13px',
-          cursor: 'pointer',
-          backgroundColor: '#95a5a6',
-          color: 'white',
-          border: 'none',
-          borderRadius: '3px',
-          fontWeight: 'normal',
-          marginBottom: '10px'
-        }}
-        onMouseOver={(e) => e.target.style.backgroundColor = '#7f8c8d'}
-        onMouseOut={(e) => e.target.style.backgroundColor = '#95a5a6'}
+        className="btn btn-link text-primary d-flex align-items-center gap-2 mb-5 text-decoration-none"
       >
-        Voltar
+        <FaArrowAltCircleLeft /> Voltar
       </button>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '40px',
-        backgroundColor: 'white',
-        padding: '30px',
-        borderRadius: '10px',
-        boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-      }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
-          <img 
-            src={produto.imagem} 
-            alt={produto.nome}
-            style={{
-              maxWidth: '100%',
-              maxHeight: '500px',
-              objectFit: 'contain',
-              borderRadius: '8px'
-            }}
-          />
+      <div className="row bg-white rounded shadow-sm p-4 g-4">
+        <div className="col-md-6 d-flex justify-content-center align-items-center">
+          {produto.imagem ? (
+            <img
+              src={produto.imagem}
+              alt={produto.nome}
+              className="img-fluid rounded object-fit-contain"
+            />
+          ) : (
+            <div className="bg-dark text-white d-flex align-items-center justify-content-center w-100 rounded ratio ratio-1x1">
+              {produto.nome}
+            </div>
+          )}
         </div>
 
-        <div>
-          <h1 style={{ 
-            fontSize: '28px', 
-            marginBottom: '15px',
-            color: '#2c3e50'
-          }}>
+        <div className="col-md-6">
+          <h2 className="fw-bold mb-2">
             {produto.nome}
-          </h1>
+          </h2>
 
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '10px',
-            marginBottom: '20px'
-          }}>
+          <div className="d-flex align-items-center gap-2 mb-3">
             <Rating
               initialRating={produto.rating}
               readonly
-              emptySymbol={<span className="star-empty">☆</span>}
-              fullSymbol={<span className="star-full">★</span>}
+              emptySymbol={<span className="text-secondary fs-4">☆</span>}
+              fullSymbol={<span className="text-warning fs-4">★</span>}
               fractions={2}
             />
-            <span style={{ color: '#7f8c8d' }}>
+            <span className="fw-semibold text-secondary">
               ({produto.avaliacoes} avaliações)
             </span>
           </div>
 
-          <div style={{
-            fontSize: '36px',
-            fontWeight: 'bold',
-            color: '#27ae60',
-            marginBottom: '25px'
-          }}>
-            R$ {produto.preco.toFixed(2)}
-          </div>
-
-          <div style={{
-            backgroundColor: '#f8f9fa',
-            padding: '20px',
-            borderRadius: '8px',
-            marginBottom: '25px'
-          }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              marginBottom: '10px',
-              color: '#2c3e50'
-            }}>
-              Descrição
-            </h3>
-            <p style={{ 
-              lineHeight: '1.6',
-              color: '#555',
-              fontSize: '15px'
-            }}>
+          <div className="border rounded p-3 bg-light mb-4">
+            <p className="fw-semibold mb-2">Descrição:</p>
+            <p className="text-muted mb-0" style={{ textAlign: "justify" }}>
               {produto.descricao}
             </p>
           </div>
 
-          <button 
+          <h3 className="text-success text-center fw-bold mb-4">
+            R$ {produto.preco.toFixed(2)}
+          </h3>
+
+          <button
             onClick={() => {
               adicionarAoCarrinho(produto);
               alert('Produto adicionado ao carrinho!');
             }}
-            style={{
-              width: '100%',
-              padding: '15px',
-              fontSize: '18px',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              backgroundColor: '#3498db',
-              color: 'white',
-              border: 'none',
-              borderRadius: '8px',
-              transition: 'background-color 0.3s'
-            }}
-            onMouseOver={(e) => e.target.style.backgroundColor = '#2980b9'}
-            onMouseOut={(e) => e.target.style.backgroundColor = '#3498db'}
+            className="btn btn-success d-flex align-items-center justify-content-center gap-2 w-100 py-2 fs-4"
           >
-            Adicionar ao Carrinho
+            Comprar
           </button>
         </div>
       </div>
