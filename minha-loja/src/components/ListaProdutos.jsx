@@ -7,45 +7,58 @@ function ListaProdutos({ adicionarAoCarrinho }) {
   const navigate = useNavigate();
 
   return (
-    <section className="product-list">
-      <h2>Lista de Produtos</h2>
-      <div className="products-container">
+    <section className="my-4">
+      <h2 className="fw-bold mb-4 text-dark">Lista de Produtos</h2>
+
+      <div className="row g-4">
         {produtos.map((produto) => (
-          <div key={produto.id} className="product-card">
-            <div 
-              className="product-image-placeholder"
-              onClick={() => navigate(`/produto/${produto.id}`)}
-              style={{ cursor: 'pointer' }}
-            >
-              {produto.imagem ? (
-                <img src={produto.imagem} alt={produto.nome} />
-              ) : (
-                produto.nome
-              )}
+          <div key={produto.id} className="col-6 col-md-4 col-lg-2">
+            <div className="card h-100 shadow-sm">
+              <div
+                className="bg-dark text-white d-flex align-items-center justify-content-center cursor-pointer"
+                onClick={() => navigate(`/produto/${produto.id}`)}
+              >
+                {produto.imagem ? (
+                  <img
+                    src={produto.imagem}
+                    alt={produto.nome}
+                    className="img-fluid w-100 h-100 object-fit-cover"
+                  />
+                ) : (
+                  <span className="fw-semibold text-center">{produto.nome}</span>
+                )}
+              </div>
+              <div className="card-body text-center">
+                <h6
+                  className="fw-semibold text-dark mb-2 cursor-pointer"
+                  onClick={() => navigate(`/produto/${produto.id}`)}
+                >
+                  {produto.nome}
+                </h6>
+
+                <div className="d-flex justify-content-center align-items-center mb-2">
+                  <Rating
+                    initialRating={produto.rating}
+                    readonly
+                    emptySymbol={<span className="text-secondary">☆</span>}
+                    fullSymbol={<span className="text-warning">★</span>}
+                    fractions={2}
+                  />
+                  <span className="ms-1 text-muted small">{produto.avaliacoes}</span>
+                </div>
+
+                <p className="fw-semibold text-dark mb-3">
+                  R$ {produto.preco.toFixed(2)}
+                </p>
+
+                <button
+                  className="btn btn-outline-success btn-sm w-100 fw-semibold"
+                  onClick={() => adicionarAoCarrinho(produto)}
+                >
+                  Comprar
+                </button>
+              </div>
             </div>
-            <h3 
-              onClick={() => navigate(`/produto/${produto.id}`)}
-              style={{ cursor: 'pointer' }}
-            >
-              {produto.nome}
-            </h3>
-            <div className="rating-container">
-              <Rating
-                initialRating={produto.rating}
-                readonly
-                emptySymbol={<span className="star-empty">☆</span>}
-                fullSymbol={<span className="star-full">★</span>}
-                fractions={2}
-              />
-              <span className="rating-count">{produto.avaliacoes}</span>
-            </div>
-            <p className="price">R$ {produto.preco.toFixed(2)}</p>
-            <button 
-              className="btn-comprar"
-              onClick={() => adicionarAoCarrinho(produto)}
-            >
-              Comprar
-            </button>
           </div>
         ))}
       </div>
