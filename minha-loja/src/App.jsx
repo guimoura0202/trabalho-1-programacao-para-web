@@ -9,7 +9,6 @@ import {
 import Home from "./pages/Home.jsx";
 import CarrinhoPage from "./pages/CarrinhoPage.jsx";
 import ProdutoDetalhes from "./pages/ProdutoDetalhes.jsx";
-import TesteCursor from "./components/teste.jsx";
 
 function AppContent() {
   const navigate = useNavigate();
@@ -123,7 +122,6 @@ function AppContent() {
               <ProdutoDetalhes adicionarAoCarrinho={adicionarAoCarrinho} />
             }
           />
-          <Route path="/teste" element={<TesteCursor />} />
         </Routes>
       </main>
       <footer className="bg-primary text-center py-2 border-top">
