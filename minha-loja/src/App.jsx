@@ -5,6 +5,8 @@ import Home from './pages/Home.jsx';
 import CarrinhoPage from './pages/CarrinhoPage.jsx';
 import ProdutoDetalhes from './pages/ProdutoDetalhes.jsx';
 import NotFound from './pages/NotFound.jsx';
+import CompraSucesso from './pages/CompraSucesso.jsx';
+
 function AppContent() {
   const navigate = useNavigate();
   const [carrinho, setCarrinho] = useState([]);
@@ -104,6 +106,7 @@ function AppContent() {
             element={<ProdutoDetalhes adicionarAoCarrinho={adicionarAoCarrinho} />}
           />
           <Route path="*" element={<NotFound />} />
+          <Route path="/sucesso" element={<CompraSucesso />} />
         </Routes>
       </main>
       <footer className="bg-primary text-center py-2 border-top">

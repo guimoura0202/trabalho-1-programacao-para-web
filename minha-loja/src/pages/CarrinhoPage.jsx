@@ -21,7 +21,8 @@ function CarrinhoPage({
           onClick={() => navigate('/')}
           className="btn btn-link text-primary d-flex align-items-center gap-2 mb-3 text-decoration-none"
         >
-          <FaArrowCircleLeft /> Voltar
+          <FaArrowCircleLeft />
+          Voltar
         </button>
       </div>
       <Carrinho

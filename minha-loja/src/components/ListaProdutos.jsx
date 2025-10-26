@@ -10,7 +10,7 @@ function ListaProdutos({ adicionarAoCarrinho }) {
     <section className="my-4">
       <h2 className="fw-bold mb-4 text-dark">Lista de Produtos</h2>
 
-      <div className="row g-4">
+      <div className="row g-1">
         {produtos.map((produto) => (
           <div key={produto.id} className="col-6 col-md-4 col-lg-2">
             <div className="card h-100 shadow-sm">

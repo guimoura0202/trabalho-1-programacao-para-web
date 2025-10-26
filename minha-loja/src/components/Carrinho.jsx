@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaBackspace, FaMinus, FaPlus } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 function Carrinho({
   carrinho,
@@ -10,6 +11,7 @@ function Carrinho({
   calcularTotal,
   calcularTotalItens,
 }) {
+  const navigate = useNavigate();
   return (
     <section className="bg-ligth p-4 rounded shadow-sm">
       {carrinho.length === 0 ? (
@@ -76,7 +78,12 @@ function Carrinho({
               <button className="btn btn-danger px-4 fw-semibold" onClick={limparCarrinho}>
                 Limpar
               </button>
-              <button className="btn btn-success px-4 fw-semibold">Finalizar Compra</button>
+              <button
+                className="btn btn-success px-4 fw-semibold"
+                onClick={() => navigate('/sucesso')}
+              >
+                Finalizar Compra
+              </button>
             </div>
           )}
         </>
