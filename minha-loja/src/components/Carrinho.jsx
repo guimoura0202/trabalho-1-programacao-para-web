@@ -80,7 +80,11 @@ function Carrinho({
               </button>
               <button
                 className="btn btn-success px-4 fw-semibold"
-                onClick={() => navigate('/sucesso')}
+                
+                onClick={() => {
+                  navigate('/sucesso');
+                  limparCarrinho()
+                }}
               >
                 Finalizar Compra
               </button>
