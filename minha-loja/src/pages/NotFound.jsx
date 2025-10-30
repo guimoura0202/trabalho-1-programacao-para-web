@@ -17,7 +17,7 @@ function NotFound() {
           <h2 className="mb-4">Página Não Encontrada</h2>
 
           <p className="lead text-muted mb-5">
-            Desculpe, a página que você está procurando não existe ou foi movida.
+            Desculpe, a página que você está procurando não existe.
           </p>
 
           <button
